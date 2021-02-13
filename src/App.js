@@ -1,34 +1,54 @@
-import React , {useState}from 'react';
+import React, { useRef, useState } from "react";
 
-import './styles/app.scss'
+import "./styles/app.scss";
 
+import Player from "./component/Player";
+import Songs from "./component/Songs";
+import Library from "./component/Library";
+import Nav from "./component/Nav";
 
-import Player from './component/player';
-import Song from './component/songs';
-
-import data from './util';
-
-
+import data from "./util";
 
 function App() {
+  //ref
+  const audioRef = useRef(null);
 
-// State
+  // State
+  const [songs, setSongs] = useState(data);
+  const [currentSong, setCurrentSong] = useState(songs[0]);
+  const [isplaying, setIsPlaying] = useState(false);
+  const [songInfo, setSongInfo] = useState({
+    currentTime: 0,
+    duration: 0,
+    animationPercent:0
+  });
 
-const [song,setSong] =useState(data());
-const [currentSong,setCurrentSong] =useState(song[0]);
-const [isplaying,setIsPlaying] =useState(false);
-
+  const [libraryStatus, setLibraryStatus] = useState(false);
 
   return (
-    <div className='title'>
-    <Song  currentSong={currentSong}/>
-    <Player
-    isplaying={isplaying}
-    setIsPlaying={setIsPlaying}
-    currentSong={currentSong}
-    
-    />
-    
+    <div className={`App ${libraryStatus ? "library-active" : ""}`}>
+    <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
+      <Songs currentSong={currentSong} />
+      <Player
+        isplaying={isplaying}
+        setIsPlaying={setIsPlaying}
+        currentSong={currentSong}
+        audioRef={audioRef}
+        songInfo={songInfo}
+        setSongInfo={setSongInfo}
+        songs={songs}
+        setSongs={setSongs}
+        setCurrentSong={setCurrentSong}
+      />
+      <Library
+        songs={songs}
+        setCurrentSong={setCurrentSong}
+        audioRef={audioRef}
+        isplaying={isplaying}
+        setSongs={setSongs}
+        libraryStatus={libraryStatus}
+        setIsPlaying={setIsPlaying}
+      />
     </div>
   );
 }

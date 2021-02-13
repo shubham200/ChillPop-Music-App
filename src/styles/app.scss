@@ -1,6 +1,6 @@
 *{
     margin:0;
-    padding:0;
+    padding-top:0;
     box-sizing: 0;
 }
 
@@ -8,5 +8,12 @@ h2,h3{
     color:rgb(90, 90, 90)
 }
 
+h3,h4{
+    font-weight: 400;
+    color:rgb(100,100,100);
+}
+
 @import './player';
 @import './songs';
+@import './library';
+@import './nav';
