@@ -1,9 +1,9 @@
 A fully Responsive Music Player created using React hooks .
 
-#Deployment 
+# Deployment 
   https://eloquent-johnson-9924f0.netlify.app/
 
-#Functions
+# Functions
 
 1.Play control
 
