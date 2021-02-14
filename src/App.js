@@ -4,8 +4,8 @@ import "./styles/app.scss";
 
 import Player from "./component/player";
 import Songs from "./component/songs";
-import Library from "./component/library";
-import Nav from "./component/nav";
+import Library from "./component/Library";
+import Nav from "./component/Nav";
 
 import data from "./util";
 
