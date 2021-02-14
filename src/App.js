@@ -2,10 +2,10 @@ import React, { useRef, useState } from "react";
 
 import "./styles/app.scss";
 
-import Player from "./component/Player";
-import Songs from "./component/Songs";
-import Library from "./component/Library";
-import Nav from "./component/Nav";
+import Player from "./component/player";
+import Songs from "./component/songs";
+import Library from "./component/library";
+import Nav from "./component/nav";
 
 import data from "./util";
 
@@ -20,14 +20,14 @@ function App() {
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
     duration: 0,
-    animationPercent:0
+    animationPercent: 0,
   });
 
   const [libraryStatus, setLibraryStatus] = useState(false);
 
   return (
     <div className={`App ${libraryStatus ? "library-active" : ""}`}>
-    <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
+      <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
       <Songs currentSong={currentSong} />
       <Player
         isplaying={isplaying}
