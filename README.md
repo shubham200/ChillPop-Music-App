@@ -1,3 +1,24 @@
+A fully Responsive Music Player created using React hooks .
+
+#Deployment 
+  https://eloquent-johnson-9924f0.netlify.app/
+
+#Functions
+
+1.Play control
+
+    Previous song,next song
+    Pause
+    Scroll or click on the progress bar of the music to realize fast forward and fast backward of the music.
+    Play the music from the music library by clicking on it .
+2.Status display
+
+    The cover picture .
+    Play progress bar.
+    Play controls.
+    Library
+    
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
